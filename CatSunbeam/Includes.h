@@ -8,8 +8,8 @@
 #include <d3dx9.h>
 
 // define the screen resolution
-#define SCREEN_WIDTH  1280
-#define SCREEN_HEIGHT 720
+#define SCREEN_WIDTH  GetSystemMetrics(SM_CXSCREEN)//1280
+#define SCREEN_HEIGHT GetSystemMetrics(SM_CYSCREEN)//720
 
 // define the keyboard macro
 #define KEY_DOWN(vk_code) ((GetAsyncKeyState(vk_code) & 0x8000) ? 1 : 0)
@@ -20,6 +20,6 @@
 
 //determines if the program should be full-screen or not
 //1 - fullscreen, 0 - windowed
-#define FULLSCREEN 0
+#define FULLSCREEN 1
 
 #endif
