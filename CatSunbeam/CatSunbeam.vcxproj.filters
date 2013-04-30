@@ -25,6 +25,12 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{0c6dccef-a45d-46fd-b511-faba6b853b5f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{23ff9235-34c1-4f38-a1c6-4032af17cbdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{30137659-824f-48da-aa75-ffd23349be30}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -45,6 +51,12 @@
     <ClCompile Include="Particles/Particles.cpp">
       <Filter>Particles</Filter>
     </ClCompile>
+    <ClCompile Include="Input/Input.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera/Camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Includes.h">
@@ -64,6 +76,12 @@
     </ClInclude>
     <ClInclude Include="Lighting/Lighting.h">
       <Filter>Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Input/Input.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera/Camera.h">
+      <Filter>Camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

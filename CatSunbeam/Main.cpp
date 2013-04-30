@@ -49,7 +49,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     ShowWindow(hWnd, nCmdShow);
 
     // set up and initialize Direct3D
-    helper->initD3D(hWnd);
+    helper->initD3D(hWnd, hInstance);
 
     // enter the main loop:
 
