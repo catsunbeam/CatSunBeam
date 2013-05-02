@@ -23,7 +23,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     wc.hInstance = hInstance;
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 #if !FULLSCREEN
-     wc.hbrBackground = (HBRUSH)COLOR_WINDOW;    // not needed any more
+     wc.hbrBackground = (HBRUSH)COLOR_WINDOW;    
 #endif
 	wc.lpszClassName = "WindowClass";
 
@@ -77,6 +77,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     helper->cleanD3D();
 
 	delete helper;
+	
     return msg.wParam;
 }
 
@@ -91,6 +92,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
                 PostQuitMessage(0);
                 return 0;
             } break;
+
     }
 
     return DefWindowProc (hWnd, message, wParam, lParam);

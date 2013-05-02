@@ -15,6 +15,8 @@ Input::~Input()
 
 void Input::initDInput(HINSTANCE hInstance, HWND hWnd)
 {
+	
+
 	DirectInput8Create(hInstance,
 					   DIRECTINPUT_VERSION,
 					   IID_IDirectInput8,
@@ -33,10 +35,11 @@ void Input::initDInput(HINSTANCE hInstance, HWND hWnd)
 	dinmouse->SetDataFormat(&c_dfDIMouse);
 
 	dinkeyboard->SetCooperativeLevel(hWnd, DISCL_NONEXCLUSIVE | DISCL_BACKGROUND);
-	dinmouse->SetCooperativeLevel(hWnd, DISCL_EXCLUSIVE | DISCL_FOREGROUND);
+	dinmouse->SetCooperativeLevel(hWnd, DISCL_FOREGROUND);
 
 	dinmouse->Acquire();
 	
+	rightButtonWasDown = false;
 
 	return;
 
@@ -45,7 +48,6 @@ void Input::initDInput(HINSTANCE hInstance, HWND hWnd)
 void Input::CheckForInput()
 {
 	//create keyboard array
-	
 	
 	dinkeyboard->Acquire();
 	dinkeyboard->GetDeviceState(256, (LPVOID)keystate);
@@ -78,7 +80,18 @@ void Input::CheckForInput()
 			camera->AddToXPos(-sin(D3DXToRadian(camera->GetAngle() - 90)));
 			camera->AddToZPos(-cos(D3DXToRadian(camera->GetAngle() - 90)));
 		}
-
+		
 		//check mouse
-		camera->ChangeDirection(mousestate);
+		if(mousestate.rgbButtons[1])
+		{
+			if(!rightButtonWasDown)
+				ShowCursor(false);
+			camera->ChangeDirection(mousestate);
+			rightButtonWasDown = true;
+		}
+		else if(rightButtonWasDown)
+		{
+			ShowCursor(true);
+			rightButtonWasDown = false;
+		}
 }

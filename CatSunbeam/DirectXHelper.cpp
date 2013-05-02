@@ -28,7 +28,7 @@ void DirectXHelper::initD3D(HWND hWnd, HINSTANCE hInstance)
 	v_buffer = NULL;
 	
 	//uncomment this to see the movement at work
-	//init_graphics();
+	init_graphics();
 
 	d3ddev->SetRenderState(D3DRS_LIGHTING, FALSE);    // turn off the 3D lighting
 	d3ddev->SetRenderState(D3DRS_ZENABLE, TRUE);

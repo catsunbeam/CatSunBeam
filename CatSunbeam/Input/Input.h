@@ -21,6 +21,8 @@ private:
 	BYTE keystate[256];
 	DIMOUSESTATE mousestate;
 
+	bool rightButtonWasDown;
+
 };
 
 #endif
